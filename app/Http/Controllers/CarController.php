@@ -30,7 +30,6 @@ class CarController extends Controller
 
     public function store(Request $request)
     {
-
         $termo = $request->search;
 
         $client = new Client();
@@ -62,7 +61,7 @@ class CarController extends Controller
         for ($i = 0; $i < count($arrNomeVeiculos[1]); $i++) {
 
             $car = new Car;
-            $car->user_id = 1;
+            $car->user_id = auth()->user()->id;
             $car->nome_veiculo = $arrNomeVeiculos[1][$i];
             $car->link = $arrLink[2][$i];
             $car->ano = $arrAno[4][$i];
@@ -74,7 +73,7 @@ class CarController extends Controller
 
             array_push($listCars, $car);
 
-            // $car->save();
+            $car->save();
         }
 
         $status = 0;

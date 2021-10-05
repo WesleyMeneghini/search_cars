@@ -22,11 +22,14 @@ Route::get('/', function () {
     return view('welcome', ['nome' => $nome]);
 });
 
-Route::get('/login', [LoginController::class, 'index']);
-Route::get('/cars', [CarController::class, 'index']);
-Route::get('/cars/search', [CarController::class, 'search']);
-Route::get('/cars/{id}', [CarController::class, 'show']);
-Route::post('/cars', [CarController::class, 'store']);
+Route::get('/cars', [CarController::class, 'index'])->middleware('auth');
+Route::get('/cars/search', [CarController::class, 'search'])->middleware('auth');
+Route::get('/cars/{id}', [CarController::class, 'show'])->middleware('auth');
+Route::post('/cars', [CarController::class, 'store'])->middleware('auth');
 
 
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
