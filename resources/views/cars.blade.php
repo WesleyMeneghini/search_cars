@@ -20,7 +20,7 @@
                 <th scope="col">Ano</th>
                 <th scope="col">Quilometragem</th>
                 <th scope="col">Cor</th>
-                <th scope="col">Visualizar Pagina</th>
+                <th scope="col">Visualizar</th>
                 <th scope="col">Deletar</th>
             </tr>
         </thead>
@@ -34,7 +34,9 @@
                     <td>{{ $car->quilometragem }}</td>
                     <td>{{ $car->cor }}</td>
                     <td>
-                        <a href="/cars/{{ $car->id }}">Pesquisar apenas esse veiculo</a>
+                        <a href="/cars/{{ $car->id }}">
+                            Acessar
+                        </a>
                     </td>
                     <td>
                         <form action="/cars/{{ $car->id }}" method="post">
