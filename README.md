@@ -1,4 +1,4 @@
-# Teste em Laravel com authenticação
+# Teste em Laravel com autenticação
 
 ## Configurações do Ambiente
 
