@@ -24,5 +24,9 @@ Route::get('/', function () {
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/cars', [CarController::class, 'index']);
-Route::get('/cars/{id}', [CarController::class, 'getCar']);
+Route::get('/cars/search', [CarController::class, 'search']);
+Route::get('/cars/{id}', [CarController::class, 'show']);
+Route::post('/cars', [CarController::class, 'store']);
+
+
 
