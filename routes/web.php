@@ -13,13 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\LoginController;
+
+
 Route::get('/', function () {
-
     $nome = "WESLEY";
-
     return view('welcome', ['nome' => $nome]);
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/cars', [CarController::class, 'index']);
+Route::get('/cars/{id}', [CarController::class, 'getCar']);
+
