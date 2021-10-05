@@ -26,6 +26,7 @@ Route::get('/cars', [CarController::class, 'index'])->middleware('auth');
 Route::get('/cars/search', [CarController::class, 'search'])->middleware('auth');
 Route::get('/cars/{id}', [CarController::class, 'show'])->middleware('auth');
 Route::post('/cars', [CarController::class, 'store'])->middleware('auth');
+Route::delete('/cars/{id}', [CarController::class, 'destroy'])->middleware('auth');
 
 
 

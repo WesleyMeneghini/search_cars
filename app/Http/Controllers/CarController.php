@@ -83,4 +83,10 @@ class CarController extends Controller
 
         return redirect("/cars/search")->with('res', $status);
     }
+
+    public function destroy($id)
+    {
+        Car::findOrFail($id)->delete();
+        return redirect('/cars')->with('msg', 'Veículo excluído com sucesso!');
+    }
 }
