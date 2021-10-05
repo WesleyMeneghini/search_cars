@@ -32,43 +32,45 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                @auth
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home </span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/cars">Lista veiculos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/cars/search">Buscar veiculos</a>
-                    </li>
-                    <li class="nav-item">
-                        <form action="/logout" method="post">
-                            @csrf
-                            <a class="nav-link" href="/logout" 
-                                onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
-                        </form>
-                        
-                    </li>
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    @auth
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/dashboard">Home </span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cars">Lista veiculos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cars/search">Buscar veiculos</a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="/logout" method="post">
+                                @csrf
+                                <a class="nav-link" href="/logout"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
+                            </form>
 
-                @endauth
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register">Registrar</a>
-                    </li>
-                @endguest
+                        </li>
 
-            </ul>
+                    @endauth
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link my-2 my-sm-0" href="/register">Registrar</a>
+                        </li>
+                    @endguest
+
+                </ul>
+            </div>
         </div>
     </nav>
 

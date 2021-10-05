@@ -4,5 +4,5 @@
     
 
 @section('content')
-    <h1>Teste</h1>
+    <h1>Pagina inicial</h1>
 @endsection

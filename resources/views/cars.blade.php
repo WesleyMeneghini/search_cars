@@ -10,17 +10,44 @@
         </div>
     @endif
 
-    @foreach ($cars as $car)
-        <p>#: {{ $car->id }} </p>
+    <h1>Lista dos Veiculos</h1>
 
-        <a href="{{ $car->link }}" target="_blank" rel="noopener noreferrer">acessar</a>
-        <a href="/cars/{{ $car->id }}">Pesquisar apenas esse veiculo</a>
-        <p>{{ $car->nome_veiculo }}</p>
-        <form action="/cars/{{ $car->id }}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Danger</button>
-        </form>
-    @endforeach
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Ano</th>
+                <th scope="col">Quilometragem</th>
+                <th scope="col">Cor</th>
+                <th scope="col">Visualizar Pagina</th>
+                <th scope="col">Deletar</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach ($cars as $car)
+                <tr>
+                    <th scope="row">{{ $car->id }}</th>
+                    <td>{{ $car->nome_veiculo }}</td>
+                    <td>{{ $car->ano }}</td>
+                    <td>{{ $car->quilometragem }}</td>
+                    <td>{{ $car->cor }}</td>
+                    <td>
+                        <a href="/cars/{{ $car->id }}">Pesquisar apenas esse veiculo</a>
+                    </td>
+                    <td>
+                        <form action="/cars/{{ $car->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Danger</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+
 
 @endsection

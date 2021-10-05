@@ -17,7 +17,6 @@
                 <input type="submit" id="search" class="btn btn-primary" value="BUSCAR" />
             </div>
         </form>
-
     </div>
 
     @if (session('res'))
