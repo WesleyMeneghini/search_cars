@@ -97,4 +97,38 @@ Options:
 
 ``` 
 
+## Instale o Framework Laravel
+
+```
+$ sudo composer global require laravel/installer
+```
+
+## Agora vamos a parte de clonar o projeto e fazer algumas configurações nos arquivos 
+
+- Clone o projeto
+```
+$ git clone https://github.com/WesleyMeneghini/search_cars.git
+```
+- Crie um Banco de dados
+- Crie um arquivo de ambiente ```.env``` e coloque as informações de acesso do banco de dados, como nome que escolheu no passo anterior
+-Execute o compando abaixo para baixar as dependencias do projeto:
+```
+$ composer install
+```
+
+- Rode as Migrates para que as tabelas sejam criadas no banco:
+```
+$ php artisan migrate
+```
+
+- Inicie o Servidor com o comando:
+
+```
+$ php artisan serve
+```
+
+- Acesse a url que é gerada após o serviço começar a rodar.
+- Para poder fazer a busca registre-se no sistema.
+- Aṕos isso jpa esta disponivel as rota de pesquisa de veiculos.
+
 
